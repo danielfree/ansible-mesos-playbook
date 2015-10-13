@@ -13,13 +13,6 @@ GIT
     ansible-docker (0.0.0)
 
 GIT
-  remote: https://github.com/mhamrah/ansible-java8
-  ref: master
-  sha: ee480e95fcdf16550f49472044560ff7a664b95a
-  specs:
-    ansible-java8 (0.0.0)
-
-GIT
   remote: https://github.com/mhamrah/ansible-marathon
   ref: master
   sha: e1d8781e4d5f55db7aee91e8cdd39a5cf2813f36
@@ -43,7 +36,6 @@ GIT
 DEPENDENCIES
   ansible-consul (>= 0)
   ansible-docker (>= 0)
-  ansible-java8 (>= 0)
   ansible-marathon (>= 0)
   ansible-mesos (>= 0)
   ansible-zookeeper (>= 0)

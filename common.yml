@@ -10,11 +10,15 @@
         - vim
         - htop
         - unzip
+        - openjdk-7-jdk
+      when: ansible_os_family == "Debian"
+    - name: Remove oracle pkg
+      apt: pkg=oracle-java8-installer state=absent
       when: ansible_os_family == "Debian"
     - name: Downloading and enable the EPEL repository definitions.
       yum: name=http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm state=present
       when: ansible_os_family == "RedHat"
-    - name: Install Redhat Packages 
+    - name: Install Redhat Packages
       yum: pkg={{ item }} state=present
       with_items:
         - java7
@@ -30,4 +34,3 @@
       lineinfile: regexp="^\s+\w+\s+requiretty" dest=/etc/sudoers state=absent
     - name: Remove require tty - alt
       lineinfile: regexp="requiretty" dest=/etc/sudoers.d/os_defaults state=absent
-  
